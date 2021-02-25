@@ -23,9 +23,8 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Toolbar = ({ className, ...rest }) => {
+const Toolbar = ({ className, textInput, changeSearchValue, ...rest }) => {
   const classes = useStyles();
-
   return (
     <div
       className={clsx(classes.root, className)}
@@ -37,6 +36,8 @@ const Toolbar = ({ className, ...rest }) => {
             <Box>
               <TextField
                 fullWidth
+                value={textInput}
+                onChange={(event) => changeSearchValue(event.target.value)}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">

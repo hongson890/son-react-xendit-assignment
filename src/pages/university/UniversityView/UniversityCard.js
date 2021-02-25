@@ -1,18 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import {
-  Avatar,
-  Box,
-  Card,
-  CardContent,
-  Divider,
-  Grid,
-  Typography,
-  makeStyles
-} from '@material-ui/core';
-import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import GetAppIcon from '@material-ui/icons/GetApp';
+import { Box, Card, CardContent, Divider, Grid, makeStyles, Typography } from '@material-ui/core';
+import A from '../../../components/A';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const ProductCard = ({ className, product, ...rest }) => {
+const UniversityCard = ({ className, data, ...rest }) => {
   const classes = useStyles();
 
   return (
@@ -43,14 +33,14 @@ const ProductCard = ({ className, product, ...rest }) => {
           gutterBottom
           variant="h4"
         >
-          {product.name}
+          {data.name}
         </Typography>
         <Typography
           align="center"
           color="textPrimary"
           variant="body1"
         >
-          {product.country}
+          {data.country}
         </Typography>
       </CardContent>
       <Box flexGrow={1} />
@@ -70,7 +60,11 @@ const ProductCard = ({ className, product, ...rest }) => {
               display="inline"
               variant="body2"
             >
-              <a href={product.web_pages}>{product.web_pages}</a>
+              <A
+                href={data.web_pages}
+                label={data.web_pages}
+                target="blank"
+              />
             </Typography>
           </Grid>
         </Grid>
@@ -79,9 +73,9 @@ const ProductCard = ({ className, product, ...rest }) => {
   );
 };
 
-ProductCard.propTypes = {
+UniversityCard.propTypes = {
   className: PropTypes.string,
-  product: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired
 };
 
-export default ProductCard;
+export default UniversityCard;

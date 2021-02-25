@@ -12,7 +12,7 @@ import MainLayout from './components/layouts/MainLayout';
 import DashboardLayout from './components/layouts/DashboardLayout';
 import GlobalStyles from './components/GlobalStyles';
 import RegisterView from './pages/auth/RegisterView';
-import UniversityListView from './pages/university/UniversityView';
+import UniversityListView from './pages/university/UniversityView/UniversityListView';
 import SnackbarPopup from './components/SnackbarPopup';
 import { notificationActions } from './_actions';
 import NotFoundView from './pages/errors/NotFoundView';
