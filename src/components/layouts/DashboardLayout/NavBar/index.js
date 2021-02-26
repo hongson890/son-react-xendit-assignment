@@ -1,8 +1,20 @@
 import React, { useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Avatar, Box, Divider, Drawer, Hidden, List, makeStyles, Typography } from '@material-ui/core';
-import { List as BarChartIcon, Lock as LockIcon, UserPlus as UserPlusIcon } from 'react-feather';
+import {
+  Avatar,
+  Box,
+  Divider,
+  Drawer,
+  Hidden,
+  InputAdornment,
+  List,
+  makeStyles,
+  SvgIcon, TextField,
+  Typography
+} from '@material-ui/core';
+import { List as BarChartIcon, Lock as LockIcon, Search as SearchIcon, UserPlus as UserPlusIcon } from 'react-feather';
+import Button from '@material-ui/core/Button';
 import NavItem from './NavItem';
 
 const user = {
@@ -42,6 +54,9 @@ const useStyles = makeStyles(() => ({
     cursor: 'pointer',
     width: 64,
     height: 64
+  },
+  typography: {
+    fontSize: 12,
   }
 }));
 
@@ -71,7 +86,6 @@ const NavBar = ({ onMobileClose, openMobile }) => {
           className={classes.avatar}
           component={RouterLink}
           src={user.avatar}
-          to="/app/account"
         />
         <Typography
           className={classes.name}
@@ -99,6 +113,22 @@ const NavBar = ({ onMobileClose, openMobile }) => {
             />
           ))}
         </List>
+      </Box>
+      <Box p={2}>
+        <TextField
+          fullWidth
+          placeholder="Email Adress"
+          variant="outlined"
+        />
+      </Box>
+      <Box p={2} marginTop={-3}>
+        <Button
+          fullWidth
+          variant="contained"
+          color="secondary"
+        >
+          Subscribe
+        </Button>
       </Box>
       <Box flexGrow={1} />
     </Box>
