@@ -115,6 +115,12 @@ const NavBar = ({ onMobileClose, openMobile }) => {
       </Box>
       <Box p={2}>
         <TextField
+          onKeyPress={(ev) => {
+            if (ev.key === 'Enter') {
+              subscribeSubmit();
+              ev.preventDefault();
+            }
+          }}
           value={email || ''}
           onChange={handleChangeEmail}
           fullWidth
