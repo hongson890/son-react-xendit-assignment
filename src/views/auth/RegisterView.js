@@ -14,6 +14,8 @@ import {
   makeStyles
 } from '@material-ui/core';
 import Page from 'src/components/Page';
+import { useDispatch } from 'react-redux';
+import { userActions } from '../../redux/user/user.actions';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 
 const RegisterView = () => {
   const classes = useStyles();
-
+  const dispatch = useDispatch();
   return (
     <Page
       className={classes.root}
@@ -56,8 +58,9 @@ const RegisterView = () => {
                 policy: Yup.boolean().oneOf([true], 'This field must be checked')
               })
             }
-            onSubmit={() => {
+            onSubmit={(values) => {
               // <Redirect to="/app/dashboard" />
+              dispatch(userActions.register(values));
             }}
           >
             {({

@@ -27,10 +27,9 @@ const LoginView = () => {
 
   const ui = useSelector((state) => state.ui);
   const classes = useStyles();
-  // const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
-      email: 'son@mailinator.com',
+      email: 'hongson890@gmail.com',
       password: '123456'
     },
     validationSchema: Yup.object().shape({
@@ -42,9 +41,7 @@ const LoginView = () => {
       setInputs((inputs) => ({ ...inputs, [name]: value }));
     },
     onSubmit: (values) => {
-      console.log(values);
       dispatch(userActions.login(values.email, values.password));
-      // navigate('/app/dashboard', { replace: true });
     },
   });
 

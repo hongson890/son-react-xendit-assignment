@@ -2,24 +2,35 @@ import React, { useEffect, useState } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Avatar, Box, Divider, Drawer, Hidden, List, makeStyles, TextField, Typography } from '@material-ui/core';
-import { List as BarChartIcon, Lock as LockIcon, UserPlus as UserPlusIcon } from 'react-feather';
+import { List as UniIcon, Lock as LockIcon, UserPlus as UserPlusIcon, User as UserIcon } from 'react-feather';
 import Button from '@material-ui/core/Button';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import NavItem from './NavItem';
 import { userActions } from '../../../redux/user/user.actions';
 
-const user = {
+const getUserName = () => {
+  const userString = localStorage.getItem('user');
+  const loggedUser = userString ? JSON.parse(userString) : null;
+  return !loggedUser ? 'Unknown User' : `${loggedUser.firstName} ${loggedUser.lastName}`;
+};
+
+const defaultUser = {
   avatar: '/static/images/avatars/default-avatar.png',
   jobTitle: 'Senior Developer',
-  name: 'Son Pham'
+  name: getUserName()
 };
 
 const items = [
   {
     href: '/universities',
-    icon: BarChartIcon,
+    icon: UniIcon,
     title: 'nav.universities'
+  },
+  {
+    href: '/user-profile',
+    icon: UserIcon,
+    title: 'nav.userProfile'
   },
   {
     href: '/login',
@@ -57,6 +68,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
   const classes = useStyles();
   const location = useLocation();
   const [email, setEmail] = useState('');
+  const [user, setUser] = useState(defaultUser);
   const dispatch = useDispatch();
   function subscribeSubmit() {
     dispatch(userActions.subscribe(email));
@@ -93,7 +105,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
           color="textPrimary"
           variant="h5"
         >
-          {user.name}
+          {getUserName()}
         </Typography>
         <Typography
           color="textSecondary"

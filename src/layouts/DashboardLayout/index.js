@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core';
+import { useDispatch } from 'react-redux';
 import NavBar from './NavBar';
 import TopBar from './TopBar';
+import { userActions } from '../../redux/user/user.actions';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,10 +37,10 @@ const useStyles = makeStyles((theme) => ({
 const DashboardLayout = ({ children }) => {
   const classes = useStyles();
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
-
+  const dispatch = useDispatch();
   return (
     <div className={classes.root}>
-      <TopBar onMobileNavOpen={() => setMobileNavOpen(true)} />
+      <TopBar onMobileNavOpen={() => setMobileNavOpen(true)} logOut={() => dispatch(userActions.logOut())} />
       <NavBar
         onMobileClose={() => setMobileNavOpen(false)}
         openMobile={isMobileNavOpen}

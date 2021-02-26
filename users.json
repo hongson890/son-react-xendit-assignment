@@ -4,5 +4,23 @@
       "email": "hongson890@gmail.com",
       "id": 1
     }
+  ],
+  "users": [
+    {
+      "email": "hongson890@gmail.com",
+      "firstName": "pham",
+      "lastName": "son",
+      "password": "123456",
+      "policy": true,
+      "id": 1
+    },
+    {
+      "email": "a@aa.bb",
+      "firstName": "son1",
+      "lastName": "hanoi",
+      "password": "1",
+      "policy": true,
+      "id": 2
+    }
   ]
 }

@@ -14,16 +14,14 @@ import RegisterView from './views/auth/RegisterView';
 import UniversityListView from './views/university/UniversityListView';
 import SnackbarPopup from './components/SnackbarPopup';
 import NotFoundView from './views/errors/NotFoundView';
-import { notificationActions } from './redux/notification/notification.actions';
+import { PrivateRouteWrapper } from './components/PrivateRouteWrapper';
+import UserProfileView from './views/users/UserProfileView';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     history.listen((location, action) => {
-      // clear alert on location change
-      // eslint-disable-next-line react/destructuring-assignment
-      this.props.clearAlerts();
     });
   }
 
@@ -34,6 +32,7 @@ class App extends React.Component {
         <SnackbarPopup />
         <Router history={history}>
           <Switch>
+            <PrivateRouteWrapper path="/user-profile" component={UserProfileView} layout={DashboardLayout} />
             <RouteWrapper exact path="/" component={UniversityListView} layout={DashboardLayout} />
             <RouteWrapper path="/universities" component={UniversityListView} layout={DashboardLayout} />
             <RouteWrapper path="/login" component={LoginView} layout={MainLayout} />
@@ -52,7 +51,6 @@ function mapState(state) {
 }
 
 const actionCreators = {
-  clearAlerts: notificationActions.clear
 };
 
 const connectedApp = connect(mapState, actionCreators)(App);

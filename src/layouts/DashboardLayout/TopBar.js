@@ -19,6 +19,7 @@ const useStyles = makeStyles(() => ({
 const TopBar = ({
   className,
   onMobileNavOpen,
+  logOut,
   ...rest
 }) => {
   const classes = useStyles();
@@ -37,7 +38,10 @@ const TopBar = ({
         <Box flexGrow={1} />
         <Hidden mdDown>
           <LanguageSelector />
-          <IconButton color="inherit">
+          <IconButton
+            onClick={logOut}
+            color="inherit"
+          >
             <InputIcon />
           </IconButton>
         </Hidden>
@@ -56,7 +60,8 @@ const TopBar = ({
 
 TopBar.propTypes = {
   className: PropTypes.string,
-  onMobileNavOpen: PropTypes.func
+  onMobileNavOpen: PropTypes.func,
+  logOut: PropTypes.func
 };
 
 export default TopBar;

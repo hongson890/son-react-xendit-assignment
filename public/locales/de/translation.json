@@ -4,7 +4,8 @@
     "login": "Anmeldung",
     "register": "Registrieren",
     "email": "Email Address",
-    "subscribe": "Abonnieren"
+    "subscribe": "Abonnieren",
+    "userProfile": "Benutzerprofil"
   },
   "universityPage": {
     "total": "Gesamt",
