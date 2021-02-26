@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import LanguageSelector from '../components/LanguageSelector.js';
+import LanguageSelector from '../components/LanguageSelector';
 
 const { i18n } = {};
 
