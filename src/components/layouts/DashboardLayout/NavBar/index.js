@@ -1,21 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {
-  Avatar,
-  Box,
-  Divider,
-  Drawer,
-  Hidden,
-  InputAdornment,
-  List,
-  makeStyles,
-  SvgIcon, TextField,
-  Typography
-} from '@material-ui/core';
-import { List as BarChartIcon, Lock as LockIcon, Search as SearchIcon, UserPlus as UserPlusIcon } from 'react-feather';
+import { Avatar, Box, Divider, Drawer, Hidden, List, makeStyles, TextField, Typography } from '@material-ui/core';
+import { List as BarChartIcon, Lock as LockIcon, UserPlus as UserPlusIcon } from 'react-feather';
 import Button from '@material-ui/core/Button';
+import { useDispatch } from 'react-redux';
 import NavItem from './NavItem';
+import { userActions } from '../../../../redux/user/user.actions';
 
 const user = {
   avatar: '/static/images/avatars/default-avatar.png',
@@ -63,7 +54,14 @@ const useStyles = makeStyles(() => ({
 const NavBar = ({ onMobileClose, openMobile }) => {
   const classes = useStyles();
   const location = useLocation();
-
+  const [email, setEmail] = useState('');
+  const dispatch = useDispatch();
+  function subscribeSubmit() {
+    dispatch(userActions.subscribe(email));
+  }
+  function handleChangeEmail(event) {
+    setEmail(event.target.value);
+  }
   useEffect(() => {
     if (openMobile && onMobileClose) {
       onMobileClose();
@@ -86,6 +84,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
           className={classes.avatar}
           component={RouterLink}
           src={user.avatar}
+          to="/"
         />
         <Typography
           className={classes.name}
@@ -116,6 +115,8 @@ const NavBar = ({ onMobileClose, openMobile }) => {
       </Box>
       <Box p={2}>
         <TextField
+          value={email || ''}
+          onChange={handleChangeEmail}
           fullWidth
           placeholder="Email Adress"
           variant="outlined"
@@ -123,6 +124,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
       </Box>
       <Box p={2} marginTop={-3}>
         <Button
+          onClick={subscribeSubmit}
           fullWidth
           variant="contained"
           color="secondary"

@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { GATEWAY_API } from './gateway';
+import { UNIVERSITY_GATEWAY_API } from './gateway.config';
 
 async function searchUniversity(textInput) {
-  let result = await axios.get(`${GATEWAY_API}/search?name=${textInput}`);
+  let result = await axios.get(`${UNIVERSITY_GATEWAY_API}/search?name=${textInput}`);
   return result;
 }
 
