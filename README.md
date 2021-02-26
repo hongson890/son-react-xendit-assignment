@@ -1,6 +1,15 @@
-# Project Title
+# React Xendit Assignment
 
-One Paragraph of project description goes here
+In this project, I'm gonna build a React Application example with some features, including React Router, Redux, Axios, MaterialUI, etc. I will show you:
+
+- Project Structure for React Redux Material Application
+- Different Wrap Layouts setup
+- Navigation Bar with 3 different menus and 3 routes
+- Responsive Design
+- Unit Test, with coverage setup
+- ESLint
+- i18n
+- json-server to store simple data in json file
 
 ## Getting Started
 
@@ -8,80 +17,91 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+Make sure you have installed Node.js in your machine, it recommends the Node version 12 and older.
 
 ```
-Give examples
+# to check node version in your local machine
+node -v
+```
+
+## Folder Structure
+
+After creation, your project should look like this:
+
+```
+son-react-xendit-assignment/
+  README.md
+  node_modules/
+  package.json
+  .eslintrc
+  .gitignore
+  .prettierrc
+  users.json
+  public/
+    index.html
+    favicon.ico
+  src/
+    components/
+    helpers/
+    pages/
+    redux/
+    services/
+    tests/
+    App.js
+    index.js
+    i18n.js
+    serviceWorker.js
+    setupTests.js
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+Please install and start the project by following command:
 
-Say what the step will be
-
+- Step 1: Install node_modules
 ```
-Give the example
-```
-
-And repeat
-
-```
-until finished
+npm install
+# or
+yarn
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+- Step2: Start json-server
+```
+npm start-server
+# or
+yarn start-server
+```
+
+- Step3: Start client
+```
+npm start
+# or
+yarn start
+```
 
 ## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
 ```
-Give an example
+npm test
+# or
+yarn test
 ```
 
-### And coding style tests
 
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## Deployment
+```
+npm run build
+# or
+yarn build
+```
 
-Add additional notes about how to deploy this on a live system
+Builds the app for production to the `build` folder.\
 
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Son Pham** - *Initial work* - [Son Pham](https://github.com/hongson890)
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
