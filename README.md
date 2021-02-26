@@ -83,7 +83,11 @@ password: 123456
 ```
 
 ## SCREENSHOT
-![ScreenShot](https://raw.github.com/{username}/{repository}/{branch}/{path})
+1. Login Page
+
+![ScreenShot](https://raw.githubusercontent.com/hongson890/son-react-xendit-assignment/main/screenshots/2021-02-26_19-10-35.png)
+
+2. Register Page
 
 ## Deployment
 ```
