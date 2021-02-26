@@ -3,6 +3,7 @@
 In this project, I'm gonna build a React Application example with some features, including React Router, Redux, Axios, MaterialUI, etc. I will show you:
 
 - Project Structure for React Redux Material Application
+- Provide Authentication with Login & Logout function by using users.json file
 - Different Wrap Layouts setup
 - Navigation Bar with 3 different menus and 3 routes
 - Responsive Design
@@ -31,23 +32,23 @@ After creation, your project should look like this:
 
 ```
 son-react-xendit-assignment/
-  README.md
   node_modules/
+  public/
   package.json
   .eslintrc
   .gitignore
   .prettierrc
+  README.md
   users.json
-  public/
-    index.html
-    favicon.ico
   src/
     components/
     helpers/
-    pages/
+    layouts/
     redux/
     services/
     tests/
+    theme/
+    views/
     App.js
     index.js
     i18n.js
@@ -66,13 +67,23 @@ yarn
 
 - Step3: Start application
 ```
-yarn dev
+yarn start
 ```
 
 ## Running the tests
 ```
 yarn test
 ```
+
+## DEMO
+Using existed account to login into system
+```
+email: hongson890@gmail.com,
+password: 123456
+```
+
+## SCREENSHOT
+![ScreenShot](https://raw.github.com/{username}/{repository}/{branch}/{path})
 
 ## Deployment
 ```

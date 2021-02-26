@@ -5,9 +5,9 @@
   "version": "1.0.0",
   "private": false,
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
     "json-server": "json-server --watch users.json --port 3001",
-    "dev": "concurrently \"yarn start\" \"yarn json-server\"",
+    "start": "concurrently \"yarn dev\" \"yarn json-server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
