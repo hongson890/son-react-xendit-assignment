@@ -16,10 +16,7 @@ function searchUniversity(textInput) {
     dispatch(requestSearchUniversity(textInput));
     try {
       let result = await universityService.searchUniversity(textInput);
-      setTimeout(() => {
-        dispatch(searchUniversitySuccessfully(result.data));
-      },
-      3000);
+      dispatch(searchUniversitySuccessfully(result.data));
     } catch (e) {
       dispatch(searchUniversityFail(e));
     }

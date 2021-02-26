@@ -12,6 +12,7 @@ import {
   makeStyles
 } from '@material-ui/core';
 import { Search as SearchIcon } from 'react-feather';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -23,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Toolbar = ({ className, textInput, changeSearchValue, ...rest }) => {
+const Toolbar = ({ className, textInput, tooltip, changeSearchValue, ...rest }) => {
   const classes = useStyles();
   return (
     <div
@@ -34,25 +35,27 @@ const Toolbar = ({ className, textInput, changeSearchValue, ...rest }) => {
         <Card>
           <CardContent>
             <Box>
-              <TextField
-                fullWidth
-                value={textInput}
-                onChange={(event) => changeSearchValue(event.target.value)}
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <SvgIcon
-                        fontSize="small"
-                        color="action"
-                      >
-                        <SearchIcon />
-                      </SvgIcon>
-                    </InputAdornment>
-                  )
-                }}
-                placeholder="Search university"
-                variant="outlined"
-              />
+              <Tooltip title={tooltip}>
+                <TextField
+                  fullWidth
+                  value={textInput}
+                  onChange={(event) => changeSearchValue(event.target.value)}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <SvgIcon
+                          fontSize="small"
+                          color="action"
+                        >
+                          <SearchIcon />
+                        </SvgIcon>
+                      </InputAdornment>
+                    )
+                  }}
+                  placeholder="Search university"
+                  variant="outlined"
+                />
+              </Tooltip>
             </Box>
           </CardContent>
         </Card>

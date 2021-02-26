@@ -4,7 +4,7 @@ import { Pagination } from '@material-ui/lab';
 import Page from 'src/components/Page';
 import { v4 as uuid } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import Typography from '@material-ui/core/Typography';
 import Toolbar from './Toolbar';
 import UniversityCard from './UniversityCard';
 import { universityActions } from '../../../redux/univeristy/university.actions';
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100%'
   }
 }));
-
+const DEFAULT_ROW_PER_PAGE = 5;
 const UniversityListView = () => {
   const classes = useStyles();
   const university = useSelector((state) => state.university);
@@ -31,11 +31,11 @@ const UniversityListView = () => {
   const dispatch = useDispatch();
   const changeSearchValue = (textInput) => setTextInput(textInput);
   function sliceList(universityList) {
-    return universityList.slice((page - 1) * 5, page * 5);
+    return universityList.slice((page - 1) * DEFAULT_ROW_PER_PAGE, page * DEFAULT_ROW_PER_PAGE);
   }
 
   useEffect(() => {
-    if (textInput.length > 3) {
+    if (textInput.length >= 3) {
       dispatch(universityActions.searchUniversity(textInput));
     } else {
       dispatch(universityActions.cleanList());
@@ -48,47 +48,39 @@ const UniversityListView = () => {
       title="University"
     >
       <Container maxWidth={false}>
-        <Toolbar textInput={textInput} changeSearchValue={changeSearchValue} />
-        {university.isLoading ? (
-          <Box mt={3}>
-            <Grid
-              container
-              spacing={3}
-            >
-              <CircularProgress />
-            </Grid>
-          </Box>
-        ) : (
-          <Box mt={3}>
-            <Grid
-              container
-              spacing={3}
-            >
-              {sliceList(university.universityList).map((university) => (
-                <Grid
-                  item
-                  key={uuid()}
-                  lg={4}
-                  md={6}
-                  xs={12}
-                >
-                  <UniversityCard
-                    className={classes.productCard}
-                    data={university}
-                  />
-                </Grid>
-              ))}
-            </Grid>
-          </Box>
-        )}
+        <Toolbar textInput={textInput} tooltip="Please input at least 3 characters" changeSearchValue={changeSearchValue} />
+        <Box mt={3}>
+          <Grid
+            container
+            spacing={3}
+          >
+            {sliceList(university.universityList).map((university) => (
+              <Grid
+                item
+                key={uuid()}
+                lg={4}
+                md={6}
+                xs={12}
+              >
+                <UniversityCard
+                  className={classes.productCard}
+                  data={university}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
         <Box
           mt={3}
           display="flex"
           justifyContent="center"
         >
+          <Typography>Total: {university.universityList.length}</Typography>
           <Pagination
             color="primary"
-            count={Math.ceil(university.universityList.length / 5)}
+            showFirstButton
+            showLastButton
+            count={Math.ceil(university.universityList.length / DEFAULT_ROW_PER_PAGE)}
             page={page}
             onChange={handleChange}
             size="small"
