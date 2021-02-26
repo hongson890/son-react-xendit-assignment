@@ -75,26 +75,37 @@ yarn start
 yarn test
 ```
 
-## DEMO
-Using existed account to login into system
-```
-email: hongson890@gmail.com,
-password: 123456
-```
-
-## SCREENSHOT
-1. Login Page
-
-![ScreenShot](https://raw.githubusercontent.com/hongson890/son-react-xendit-assignment/main/screenshots/2021-02-26_19-10-35.png)
-
-2. Register Page
-
 ## Deployment
 ```
 yarn build
 ```
 
 Builds the app for production to the `build` folder.\
+
+## Demo
+Using existed account to login into system
+```
+email: hongson890@gmail.com,
+password: 123456
+```
+
+## Screenshots
+1._Login Page_
+
+![ScreenShot](https://raw.githubusercontent.com/hongson890/son-react-xendit-assignment/main/screenshots/login.png)
+
+2._Register Page_
+
+![ScreenShot](https://raw.githubusercontent.com/hongson890/son-react-xendit-assignment/main/screenshots/register.png)
+
+3._Universities Searching Page_
+
+![ScreenShot](https://raw.githubusercontent.com/hongson890/son-react-xendit-assignment/main/screenshots/universities.png)
+
+4._User Profile Page (Login Required)_
+
+![ScreenShot](https://raw.githubusercontent.com/hongson890/son-react-xendit-assignment/main/screenshots/user-profile.png)
+
 
 
 ## Authors
