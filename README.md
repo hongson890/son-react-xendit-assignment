@@ -1,11 +1,12 @@
 # React Xendit Assignment
 
-In this project, I'm gonna build a React Application example with some features, including React Router, Redux, Axios, MaterialUI, etc. I will show you:
+In this project, I'm gonna build a React Application example with some features, including React Router, Redux, MaterialUI, etc. I will show you:
 
-- Project Structure for React Redux Material Application
+- Project Structure for React Redux Material-UI Application
 - Provide Authentication with Login & SignUp function by using users.json file
 - Provide Protected Route and Public Route
 - Different Wrap Layouts setup
+- Snackbar Popup with Redux State Management
 - Navigation Bar with 3 different menus and 3 routes
 - Responsive Design
 - Unit Test, with coverage setup
@@ -61,12 +62,12 @@ son-react-xendit-assignment/
 
 Please install and start the project by following command:
 
-- Step 1: Install node_modules
+- Install node_modules by using yarn
 ```
 yarn
 ```
 
-- Step3: Start application
+- Start application
 ```
 yarn start
 ```
