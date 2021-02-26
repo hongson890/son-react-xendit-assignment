@@ -31,8 +31,6 @@ function healthCheck() {
 }
 
 function login(email, password) {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   return (dispatch) => {
     dispatch(request({ email }));
 
