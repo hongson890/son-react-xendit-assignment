@@ -67,7 +67,7 @@ yarn
 
 - Step2: Start json-server
 ```
-npm start-server
+npm run start-server
 # or
 yarn start-server
 ```
@@ -81,7 +81,7 @@ yarn start
 
 ## Running the tests
 ```
-npm test
+npm run test
 # or
 yarn test
 ```
