@@ -7,7 +7,7 @@ import LanguageSelector from '../components/LanguageSelector';
 const { i18n } = {};
 
 describe('LanguageSelector', () => {
-  it('render ok', () => {
+  it('render language ok', () => {
     const component = shallow(<LanguageSelector />);
 
     expect(toJson(component)).toMatchSnapshot();

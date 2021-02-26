@@ -54,7 +54,7 @@ son-react-xendit-assignment/
     setupTests.js
 ```
 
-## Installing
+## Installing & Starting
 
 Please install and start the project by following command:
 
@@ -63,14 +63,9 @@ Please install and start the project by following command:
 yarn
 ```
 
-- Step2: Start json-server
+- Step3: Start application
 ```
-yarn start-server
-```
-
-- Step3: Start client
-```
-yarn start
+yarn dev
 ```
 
 ## Running the tests

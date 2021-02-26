@@ -6,7 +6,7 @@ import {
 } from './university.constant';
 
 export const initialState = {
-  isLoading: false,
+  loading: false,
   errorMessage: '',
   universityList: [],
   textInput: ''

@@ -8,6 +8,9 @@ import { universityService } from '../../services/university.service';
 
 export const universityActions = {
   searchUniversity,
+  requestSearchUniversity,
+  searchUniversitySuccessfully,
+  searchUniversityFail,
   cleanList
 };
 

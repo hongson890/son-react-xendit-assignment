@@ -1,5 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`LanguageSelector render language ok 1`] = `
+<div
+  className="LanguageSelector"
+>
+  <WithStyles(ForwardRef(Button))
+    onClick={[Function]}
+    style={Object {}}
+  >
+    <Component />
+  </WithStyles(ForwardRef(Button))>
+  <WithStyles(ForwardRef(Button))
+    onClick={[Function]}
+  >
+    <Component />
+  </WithStyles(ForwardRef(Button))>
+</div>
+`;
+
 exports[`LanguageSelector render ok 1`] = `
 <div
   className="LanguageSelector"
