@@ -5,9 +5,9 @@ import Page from 'src/components/Page';
 import { v4 as uuid } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
 import Typography from '@material-ui/core/Typography';
-import Toolbar from './Toolbar';
+import Toolbar from '../../components/Toolbar';
 import UniversityCard from './UniversityCard';
-import { universityActions } from '../../../redux/univeristy/university.actions';
+import { universityActions } from '../../redux/univeristy/university.actions';
 
 const useStyles = makeStyles((theme) => ({
   root: {

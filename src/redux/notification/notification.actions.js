@@ -1,4 +1,4 @@
-import { notificationConstants } from '../_constants';
+import { notificationConstants } from './notification.constants';
 
 export const notificationActions = {
   success,

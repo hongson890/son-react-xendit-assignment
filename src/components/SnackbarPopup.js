@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Snackbar from '@material-ui/core/Snackbar';
 import Alert from '@material-ui/lab/Alert';
-import { notificationActions } from '../_actions/notification.actions';
+import { notificationActions } from '../redux/notification/notification.actions';
 
 export default function SnackbarPopup() {
   const dispatch = useDispatch();
