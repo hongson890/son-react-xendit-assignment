@@ -3,7 +3,8 @@
 In this project, I'm gonna build a React Application example with some features, including React Router, Redux, Axios, MaterialUI, etc. I will show you:
 
 - Project Structure for React Redux Material Application
-- Provide Authentication with Login & Logout function by using users.json file
+- Provide Authentication with Login & SignUp function by using users.json file
+- Provide Protected Route and Public Route
 - Different Wrap Layouts setup
 - Navigation Bar with 3 different menus and 3 routes
 - Responsive Design
