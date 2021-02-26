@@ -1,7 +1,14 @@
 {
-  "title": "todos",
-  "placeholder": "What needs to be done?",
-  "dashboard" : {
-    "budget": "Budget-de"
+  "nav" : {
+    "universities": "Universitäten",
+    "login": "Anmeldung",
+    "register": "Registrieren",
+    "email": "Email Address",
+    "subscribe": "Abonnieren"
+  },
+  "universityPage": {
+    "total": "Gesamt",
+    "placeholder": "Suche Universität",
+    "tooltip": "Bitte geben Sie mindestens 3 Zeichen ein"
   }
 }

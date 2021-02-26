@@ -5,8 +5,9 @@ import { Avatar, Box, Divider, Drawer, Hidden, List, makeStyles, TextField, Typo
 import { List as BarChartIcon, Lock as LockIcon, UserPlus as UserPlusIcon } from 'react-feather';
 import Button from '@material-ui/core/Button';
 import { useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import NavItem from './NavItem';
-import { userActions } from '../../../../redux/user/user.actions';
+import { userActions } from '../../../redux/user/user.actions';
 
 const user = {
   avatar: '/static/images/avatars/default-avatar.png',
@@ -18,17 +19,17 @@ const items = [
   {
     href: '/universities',
     icon: BarChartIcon,
-    title: 'Universities'
+    title: 'nav.universities'
   },
   {
     href: '/login',
     icon: LockIcon,
-    title: 'Login'
+    title: 'nav.login'
   },
   {
     href: '/register',
     icon: UserPlusIcon,
-    title: 'Register'
+    title: 'nav.register'
   }
 ];
 
@@ -52,6 +53,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 const NavBar = ({ onMobileClose, openMobile }) => {
+  const { t } = useTranslation();
   const classes = useStyles();
   const location = useLocation();
   const [email, setEmail] = useState('');
@@ -107,7 +109,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
             <NavItem
               href={item.href}
               key={item.title}
-              title={item.title}
+              title={t(item.title)}
               icon={item.icon}
             />
           ))}
@@ -124,7 +126,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
           value={email || ''}
           onChange={handleChangeEmail}
           fullWidth
-          placeholder="Email Adress"
+          placeholder={t('nav.email')}
           variant="outlined"
         />
       </Box>
@@ -135,7 +137,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
           variant="contained"
           color="secondary"
         >
-          Subscribe
+          {t('nav.subscribe')}
         </Button>
       </Box>
       <Box flexGrow={1} />

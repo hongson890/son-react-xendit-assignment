@@ -1,20 +1,19 @@
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import React from 'react';
 import { Route, Router, Switch } from 'react-router-dom';
-import 'src/components/mixins/chartjs';
 import { connect } from 'react-redux';
-import theme from 'src/components/theme';
+import theme from 'src/theme';
 import ThemeProvider from '@material-ui/styles/ThemeProvider';
 import { history } from './helpers';
-import LoginView from './pages/auth/LoginView';
+import LoginView from './views/auth/LoginView';
 import { RouteWrapper } from './components/RouteWrapper';
-import MainLayout from './components/layouts/MainLayout';
-import DashboardLayout from './components/layouts/DashboardLayout';
+import MainLayout from './layouts/MainLayout';
+import DashboardLayout from './layouts/DashboardLayout';
 import GlobalStyles from './components/GlobalStyles';
-import RegisterView from './pages/auth/RegisterView';
-import UniversityListView from './pages/university/UniversityListView';
+import RegisterView from './views/auth/RegisterView';
+import UniversityListView from './views/university/UniversityListView';
 import SnackbarPopup from './components/SnackbarPopup';
-import NotFoundView from './pages/errors/NotFoundView';
+import NotFoundView from './views/errors/NotFoundView';
 import { notificationActions } from './redux/notification/notification.actions';
 
 class App extends React.Component {

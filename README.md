@@ -8,7 +8,8 @@ In this project, I'm gonna build a React Application example with some features,
 - Responsive Design
 - Unit Test, with coverage setup
 - ESLint
-- i18n
+- react-i18next
+- Reusable Components
 - json-server to store simple data in json file
 
 ## Getting Started

@@ -1,7 +1,14 @@
 {
-  "title": "todos",
-  "placeholder": "What needs to be done?",
-  "dashboard" : {
-    "budget": "Budget-en"
+  "nav" : {
+    "universities": "Universities",
+    "login": "Login",
+    "register": "Register",
+    "email": "Email Address",
+    "subscribe": "Subscribe"
+  },
+  "universityPage": {
+    "total": "Total",
+    "placeholder": "Search university",
+    "tooltip": "Please input at least 3 characters"
   }
 }

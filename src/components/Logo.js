@@ -4,7 +4,7 @@ const Logo = (props) => {
   return (
     <img
       alt="Logo"
-      src="/static/xendit-logo-white.svg"
+      src="/static/logo.svg"
       {...props}
     />
   );

@@ -5,6 +5,7 @@ import Page from 'src/components/Page';
 import { v4 as uuid } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
 import Typography from '@material-ui/core/Typography';
+import { useTranslation } from 'react-i18next';
 import Toolbar from '../../components/Toolbar';
 import UniversityCard from './UniversityCard';
 import { universityActions } from '../../redux/univeristy/university.actions';
@@ -22,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
 const DEFAULT_ROW_PER_PAGE = 5;
 const UniversityListView = () => {
   const classes = useStyles();
+  const { t } = useTranslation();
   const university = useSelector((state) => state.university);
   const [textInput, setTextInput] = useState('columbus');
   const [page, setPage] = React.useState(1);
@@ -48,7 +50,7 @@ const UniversityListView = () => {
       title="University"
     >
       <Container maxWidth={false}>
-        <Toolbar textInput={textInput} tooltip="Please input at least 3 characters" changeSearchValue={changeSearchValue} />
+        <Toolbar textInput={textInput} placeholder={t('universityPage.placeholder')} tooltip={t('universityPage.tooltip')} changeSearchValue={changeSearchValue} />
         <Box mt={3}>
           <Grid
             container
@@ -75,7 +77,7 @@ const UniversityListView = () => {
           display="flex"
           justifyContent="center"
         >
-          <Typography>Total: {university.universityList.length}</Typography>
+          <Typography>{t('universityPage.total')}: {university.universityList.length}</Typography>
           <Pagination
             color="primary"
             showFirstButton

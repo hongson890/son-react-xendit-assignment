@@ -1,16 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import {
-  Box,
-  Button,
-  Card,
-  CardContent,
-  TextField,
-  InputAdornment,
-  SvgIcon,
-  makeStyles
-} from '@material-ui/core';
+import { Box, Card, CardContent, InputAdornment, makeStyles, SvgIcon, TextField } from '@material-ui/core';
 import { Search as SearchIcon } from 'react-feather';
 import Tooltip from '@material-ui/core/Tooltip';
 
@@ -24,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Toolbar = ({ className, textInput, tooltip, changeSearchValue, ...rest }) => {
+const Toolbar = ({ className, textInput, tooltip, placeholder, changeSearchValue, ...rest }) => {
   const classes = useStyles();
   return (
     <div
@@ -52,7 +43,7 @@ const Toolbar = ({ className, textInput, tooltip, changeSearchValue, ...rest }) 
                       </InputAdornment>
                     )
                   }}
-                  placeholder="Search university"
+                  placeholder={placeholder}
                   variant="outlined"
                 />
               </Tooltip>

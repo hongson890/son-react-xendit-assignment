@@ -53,4 +53,3 @@ describe('notificationReducers', () => {
     expect(expectedState).toEqual(actualState);
   });
 });
-

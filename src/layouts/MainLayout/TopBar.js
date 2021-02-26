@@ -27,7 +27,7 @@ const TopBar = ({ className, ...rest }) => {
     >
       <Toolbar className={classes.toolbar}>
         <RouterLink to="/">
-          <Logo />
+          <Logo width={120} src="/static/04-xendit_logo_light.svg" />
         </RouterLink>
       </Toolbar>
     </AppBar>

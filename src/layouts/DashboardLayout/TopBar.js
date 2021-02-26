@@ -2,20 +2,11 @@ import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import {
-  AppBar,
-  Badge,
-  Box,
-  Hidden,
-  IconButton,
-  Toolbar,
-  makeStyles
-} from '@material-ui/core';
+import { AppBar, Box, Hidden, IconButton, makeStyles, Toolbar } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
 import InputIcon from '@material-ui/icons/Input';
 import Logo from 'src/components/Logo';
-import LanguageSelector from '../../LanguageSelector';
+import LanguageSelector from '../../components/LanguageSelector';
 
 const useStyles = makeStyles(() => ({
   root: {},
@@ -41,7 +32,7 @@ const TopBar = ({
     >
       <Toolbar>
         <RouterLink to="/">
-          <Logo />
+          <Logo width={120} src="/static/04-xendit_logo_light.svg" />
         </RouterLink>
         <Box flexGrow={1} />
         <Hidden mdDown>
