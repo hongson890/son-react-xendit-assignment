@@ -60,29 +60,21 @@ Please install and start the project by following command:
 
 - Step 1: Install node_modules
 ```
-npm install
-# or
 yarn
 ```
 
 - Step2: Start json-server
 ```
-npm run start-server
-# or
 yarn start-server
 ```
 
 - Step3: Start client
 ```
-npm start
-# or
 yarn start
 ```
 
 ## Running the tests
 ```
-npm run test
-# or
 yarn test
 ```
 
@@ -90,8 +82,6 @@ yarn test
 
 ## Deployment
 ```
-npm run build
-# or
 yarn build
 ```
 
